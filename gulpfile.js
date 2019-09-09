@@ -13,8 +13,8 @@ const uglifycss = require('gulp-uglifycss');
 
 gulp.task('js', function() {
   return gulp.src([
-    'assets/js/*.js',
-    'assets/js/*/*.js'])
+    'src/js/*/*.js',
+    'src/js/*.js'])
     .pipe(concat('index.js'))
     .pipe(babel({
       presets: ['@babel/preset-env']
@@ -25,7 +25,7 @@ gulp.task('js', function() {
 
 gulp.task('css', function() {
   return gulp.src([
-    'assets/css/*/*.css'])
+    'src/css/*/*.css'])
     .pipe(concatCss('main.css', {
       rebaseUrls: false
     }))
@@ -38,4 +38,9 @@ gulp.task('css', function() {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', gulp.parallel('css', 'js'));
+gulp.task('assets', function () {
+  return gulp.src('src/assets/*/*')
+    .pipe(gulp.dest('dist/assets'));
+});
+
+gulp.task('default', gulp.parallel('css', 'js', 'assets'));
