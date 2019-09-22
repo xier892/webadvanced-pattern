@@ -23,6 +23,7 @@ module.exports = {
     'no-param-reassign': 0,
     'no-plusplus': 0,
     'no-undef': 0,
+    'no-unused-vars': 0,
     // 'no-use-before-define': 0,
     'prefer-arrow-callback': 0,
     'space-before-function-paren': 0

@@ -1,8 +1,13 @@
 .square {
   display: flex;
-  width: 10%;
+  width: 10vw;
+  height: 10vw;
   margin: 1%;
   background-repeat: repeat;
   justify-content: center;
   overflow: hidden;
+  transition: box-shadow 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.square:hover {
+  box-shadow: 0 5px 20px #888;
 }
