@@ -25,7 +25,7 @@ const renderSquares = (quantity) => {
       fragment2.appendChild(square2);
       squares[i].children.push({
         element: square2,
-        animationDirection: 'forward',
+        animationDirection: '',
         width: 100 / j,
         minWidth: 100 / quantity + 1
       });
