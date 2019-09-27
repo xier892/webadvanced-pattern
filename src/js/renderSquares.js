@@ -37,5 +37,5 @@ const renderSquares = (quantity) => {
   grid.appendChild(fragment);
   document.body.appendChild(grid);
 
-  animateLine(squares);
+  animate(squares);
 };

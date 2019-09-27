@@ -1,0 +1,6 @@
+.big.square {
+  position: fixed;
+  z-index: 2;
+  animation: embiggen 0.3s var(--cubic-bezier) both;
+  cursor: auto;
+}

@@ -1,13 +1,15 @@
 .square {
   display: flex;
-  width: 10vw;
-  height: 10vw;
-  margin: 1%;
+  width: var(--square-width);
+  height: var(--square-height);
+  margin: var(--square-margin);
   background-repeat: repeat;
   justify-content: center;
   overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s var(--cubic-bezier);
 }
-.square:before {
+.square:not(.big):before {
   content: '';
   position: absolute;
   z-index: -1;
@@ -20,8 +22,8 @@
               0 8px 8px -8px rgba(0,0,0,0.32),
               0 16px 16px -8px rgba(0,0,0,0.16),
               0 32px 32px -8px rgba(0,0,0,0.16);
-  transition: opacity 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: opacity 0.2s var(--cubic-bezier);
 }
-.square:hover::before {
+.square:not(.big):hover::before {
   opacity: 1;
 }

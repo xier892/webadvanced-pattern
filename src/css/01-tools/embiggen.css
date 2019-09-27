@@ -1,0 +1,15 @@
+@keyframes embiggen {
+  0% {
+    width: var(--square-width);
+    height: var(--square-height);
+    margin: var(--square-margin);
+    transform: translateY(0);
+    opacity: 0;
+  } 100% {
+    margin: 0;
+    width: 100vw;
+    height: 100vw;
+    transform: translateY(-20%);
+    opacity: 1;
+  }
+}

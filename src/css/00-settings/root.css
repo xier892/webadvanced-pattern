@@ -1,0 +1,6 @@
+:root {
+  --square-width: 10vw;
+  --square-height: 10vw;
+  --square-margin: 1%;
+  --cubic-bezier: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
