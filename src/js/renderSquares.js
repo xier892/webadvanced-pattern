@@ -7,11 +7,13 @@ const renderSquares = (quantity) => {
 
   for (let i = 0; i < quantity; i++) {
     const lightness = i % 2 === 0 ? getRandomInt(20, 40) : getRandomInt(80, 100);
+    const button = document.createElement('button');
     const square = document.createElement('li');
     square.className = 'square';
     square.style.backgroundColor = `hsl(0, 0%, ${lightness}%)`;
     const fragment2 = document.createDocumentFragment();
     squares.push({
+      button,
       element: square,
       children: []
     });
@@ -31,7 +33,8 @@ const renderSquares = (quantity) => {
       });
     }
     square.appendChild(fragment2);
-    fragment.appendChild(square);
+    button.appendChild(square);
+    fragment.appendChild(button);
   }
 
   grid.appendChild(fragment);

@@ -1,0 +1,12 @@
+button {
+  width: var(--square-width);
+  height: var(--square-height);
+  outline: none;
+  border: 0;
+  margin: var(--square-margin);
+  padding: 0;
+  background-color: transparent;
+}
+button:hover > .square:not(.big)::before, button:active > .square:not(.big)::before, button:focus > .square:not(.big)::before {
+  opacity: 1;
+}

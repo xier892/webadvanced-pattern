@@ -32,7 +32,10 @@ gulp.task('css', function() {
       rebaseUrls: false
     }))
     .pipe(postcss([
-      cssvariables()
+      cssvariables({
+        preserve: true,
+        preserveAtRulesOrder: true
+      })
     ]))
     .pipe(uglifycss({
       uglyComments: true
@@ -45,4 +48,4 @@ gulp.task('assets', function () {
     .pipe(gulp.dest('dist/assets'));
 });
 
-gulp.task('default', gulp.parallel('css', 'js', 'assets'));
+gulp.task('default', gulp.parallel('css', 'js'));

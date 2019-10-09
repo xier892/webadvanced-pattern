@@ -3,4 +3,6 @@
   z-index: 2;
   animation: embiggen 0.3s var(--cubic-bezier) both;
   cursor: auto;
+  top: 0;
+  left: 0;
 }
