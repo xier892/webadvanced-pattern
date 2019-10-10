@@ -27,6 +27,7 @@ const animate = (array) => {
           document.body.style.overflowY = 'auto';
         };
         const open = () => {
+          button.blur();
           if (document.getElementsByClassName('big').length > 0) {
             for (let k = 0; k < document.getElementsByClassName('square').length; k++) {
               document.getElementsByClassName('square')[k].classList.remove('big');
@@ -35,9 +36,9 @@ const animate = (array) => {
           element.classList.add('big');
           document.body.style.overflowY = 'hidden';
 
-          button.addEventListener('event', (event) => {
-            event.preventDefault();
-            if (event.keyCode === 27) {
+          window.addEventListener('keyup', (e) => {
+            e.preventDefault();
+            if (e.keyCode === 27) {
               close();
             }
           });
@@ -53,9 +54,9 @@ const animate = (array) => {
       array[i].button.addEventListener('click', () => {
         embiggen(array[i]);
       });
-      array[i].button.addEventListener('event', (event) => {
-        event.preventDefault();
-        if (event.keyCode === 13 || event.keyCode === 32) {
+      array[i].button.addEventListener('keyup', (e) => {
+        e.preventDefault();
+        if (e.keyCode === 13 || e.keyCode === 32) {
           embiggen(array[i]);
         }
       });
@@ -63,9 +64,9 @@ const animate = (array) => {
         array[i + 1].button.addEventListener('click', () => {
           embiggen(array[i + 1]);
         });
-        array[i].button.addEventListener('event', (event) => {
-          event.preventDefault();
-          if (event.keyCode === 13 || event.keyCode === 32) {
+        array[i].button.addEventListener('keyup', (e) => {
+          e.preventDefault();
+          if (e.keyCode === 13 || e.keyCode === 32) {
             embiggen(array[i + 1]);
           }
         });
